@@ -18,7 +18,7 @@ const addFood = async (req: Request, res: Response) => {
     data: {
       foodName: req.body.foodName,
       price: parseInt(req.body.price),
-      img: req.body.img
+      img: req.body.img,
     },
   });
 
@@ -53,4 +53,5 @@ const deleteAllFood = async (req: Request, res: Response) => {
   await prisma.foodMenu.deleteMany({});
   res.json({ msg: "All foods has been deleted" });
 };
+
 export { addFood, findFoods, updateFood, deleteFood, deleteAllFood, getFood };

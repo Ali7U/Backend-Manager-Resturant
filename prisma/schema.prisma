@@ -32,15 +32,18 @@ model FoodMenu {
   price Int 
   img String
 
-  order Orders[]
+  // order Orders[]
 }
 
 model Orders {
   id String @id @default(uuid())
-  orderID String @default(uuid())
-  foodID String @default(uuid())
-
+  orderID String 
+  foodName String
+  qty Int @default(0)
+  price Int
   user User @relation(fields: [orderID], references: [id])  
-  
-  orderFood FoodMenu @relation(fields: [foodID], references: [id])  
+  total Float
+  onCreated DateTime 
+  // orderFood FoodMenu @relation(fields: [foodID], references: [id])  
 }
+

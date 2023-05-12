@@ -1,8 +1,8 @@
 import { z, TypeOf } from "zod";
 
-enum Role{
-  ADMIN= "ADMIN",
-  USER="USER"
+enum Role {
+  ADMIN = "ADMIN",
+  USER = "USER",
 }
 
 export const Registertype = z.object({

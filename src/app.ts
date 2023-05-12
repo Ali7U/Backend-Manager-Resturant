@@ -4,6 +4,7 @@ import cors from "cors";
 import { connectDB } from "./config/db";
 import userRouter from "./routers/user.routes";
 import foodRouter from "./routers/food.routes";
+import orderRouter from "./routers/order.routes";
 const app: Application = express();
 
 dotenv.config();
@@ -16,5 +17,6 @@ connectDB();
 // Routers
 app.use("/users", userRouter);
 app.use("/foods", foodRouter);
+app.use("/order", orderRouter);
 
 app.listen(PORT, () => console.log(`Server is up on PORT ${PORT}`));
